@@ -1,0 +1,324 @@
+2023-06-01 16:34:49,338 TRACE [org.wildfly.security] (management I/O-2) Handling SocketAddressCallback
+2023-06-01 16:34:49,339 TRACE [org.wildfly.security] (management I/O-2) Handling SocketAddressCallback
+2023-06-01 16:34:49,340 TRACE [org.wildfly.security] (management I/O-2) Handling MechanismInformationCallback type='SASL' name='JBOSS-LOCAL-USER' host-name='localhost' protocol='remote'
+2023-06-01 16:34:49,341 TRACE [org.wildfly.security] (management I/O-2) Handling MechanismInformationCallback type='SASL' name='JBOSS-LOCAL-USER' host-name='localhost' protocol='remote'
+2023-06-01 16:34:49,347 TRACE [org.wildfly.security] (management I/O-2) Creating SaslServer [org.wildfly.security.sasl.localuser.LocalUserServer@6a861f98] for mechanism [JBOSS-LOCAL-USER] and protocol [remote]
+2023-06-01 16:34:49,349 TRACE [org.wildfly.security] (management I/O-2) Created SaslServer [org.wildfly.security.sasl.util.SecurityIdentitySaslServerFactory$1@7cb0f530->org.wildfly.security.sasl.util.AuthenticationTimeoutSaslServerFactory$DelegatingTimeoutSaslServer@553d600c->org.wildfly.security.sasl.util.AuthenticationCompleteCallbackSaslServerFactory$1@79f43370->org.wildfly.security.sasl.localuser.LocalUserServer@6a861f98] for mechanism [JBOSS-LOCAL-USER]
+2023-06-01 16:34:49,355 TRACE [org.wildfly.security] (management task-1) Handling NameCallback: authenticationName = $local
+2023-06-01 16:34:49,356 TRACE [org.wildfly.security] (management task-1) Principal assigning: [$local], pre-realm rewritten: [$local], realm name: [local], post-realm rewritten: [$local], realm rewritten: [$local]
+2023-06-01 16:34:49,359 TRACE [org.wildfly.security] (management task-1) Role mapping: principal [$local] -> decoded roles [] -> domain decoded roles [] -> realm mapped roles [SuperUser] -> domain mapped roles [SuperUser]
+2023-06-01 16:34:49,360 TRACE [org.wildfly.security] (management task-1) Authorizing principal $local.
+2023-06-01 16:34:49,360 TRACE [org.wildfly.security] (management task-1) Authorizing against the following attributes: [] => []
+2023-06-01 16:34:49,360 TRACE [org.wildfly.security] (management task-1) Authorizing against the following runtime attributes: [Source-Address] => [127.0.0.1]
+2023-06-01 16:34:49,360 TRACE [org.wildfly.security] (management task-1) Permission mapping: identity [$local] with roles [SuperUser] implies ("org.wildfly.security.auth.permission.LoginPermission" "") = true
+2023-06-01 16:34:49,361 TRACE [org.wildfly.security] (management task-1) Authorization succeed
+2023-06-01 16:34:49,362 TRACE [org.wildfly.security] (management task-1) RunAs authorization succeed - the same identity
+2023-06-01 16:34:49,362 TRACE [org.wildfly.security] (management task-1) Handling AuthorizeCallback: authenticationID = $local  authorizationID = $local  authorized = true
+2023-06-01 16:34:49,362 TRACE [org.wildfly.security.sasl.local] (management task-1) SASL Negotiation Completed
+2023-06-01 16:34:49,362 TRACE [org.wildfly.security] (management task-1) Handling AuthenticationCompleteCallback: succeed
+2023-06-01 16:34:49,363 TRACE [org.wildfly.security] (management task-1) Handling SecurityIdentityCallback: identity = SecurityIdentity{principal=$local, securityDomain=org.wildfly.security.auth.server.SecurityDomain@2db1fbae, authorizationIdentity=EMPTY, realmInfo=RealmInfo{name='local', securityRealm=org.wildfly.security.auth.realm.SimpleMapBackedSecurityRealm@5882953a}, creationTime=2023-06-01T20:34:49.359706Z}
+2023-06-01 16:34:49,753 TRACE [org.wildfly.security.tls] (MSC service thread 1-3) AtomicLoadKeyStore creating:  type = JKS,  provider =  SUN version 11
+2023-06-01 16:34:49,754 TRACE [org.wildfly.extension.elytron] (MSC service thread 1-3) starting:  type = JKS  provider = null  path = server.truststore  resolvedPath = /home/carodrig/wildfly/dist/target/wildfly-29.0.0.Alpha1-SNAPSHOT/standalone/configuration/server.truststore  password = true  aliasFilter = null
+2023-06-01 16:34:49,754 TRACE [org.wildfly.security.tls] (MSC service thread 1-3) AtomicLoadKeyStore loading:  stream = java.io.FileInputStream@77499971,  password = true
+2023-06-01 16:34:49,827 TRACE [org.wildfly.security.tls] (MSC service thread 1-3) AtomicLoadKeyStore creating:  type = JKS,  provider =  SUN version 11
+2023-06-01 16:34:49,828 TRACE [org.wildfly.extension.elytron] (MSC service thread 1-3) starting:  type = JKS  provider = null  path = server.keystore  resolvedPath = /home/carodrig/wildfly/dist/target/wildfly-29.0.0.Alpha1-SNAPSHOT/standalone/configuration/server.keystore  password = true  aliasFilter = null
+2023-06-01 16:34:49,828 TRACE [org.wildfly.security.tls] (MSC service thread 1-3) AtomicLoadKeyStore loading:  stream = java.io.FileInputStream@4e7654dd,  password = true
+2023-06-01 16:34:49,829 TRACE [org.wildfly.extension.elytron] (MSC service thread 1-3) TrustManager supplying:  providers = null  provider = null  algorithm = PKIX  trustManagerFactory = javax.net.ssl.TrustManagerFactory@1a6a523c  keyStoreName = serverTS  keyStore = org.wildfly.security.keystore.UnmodifiableKeyStore@2153c211  aliasFilter = null  keyStoreSize = 1
+2023-06-01 16:34:49,829 TRACE [org.wildfly.extension.elytron] (MSC service thread 1-6) KeyManager supplying:  providers = null  provider = null  algorithm = SunX509  keyManagerFactory = javax.net.ssl.KeyManagerFactory@7229f3c0  keyStoreName = server.keystore  aliasFilter = null  keyStore = org.wildfly.security.keystore.UnmodifiableKeyStore@34ccd1c9  keyStoreSize = 1  password (of item) = true
+2023-06-01 16:34:49,831 TRACE [org.wildfly.extension.elytron] (MSC service thread 1-6) ServerSSLContext supplying:  securityDomain = null  keyManager = org.wildfly.extension.elytron.SSLDefinitions$DelegatingKeyManager@441ff7c  trustManager = org.wildfly.extension.elytron.SSLDefinitions$DelegatingTrustManager@6271f3c5  providers = null  cipherSuiteFilter = DEFAULT  cipherSuiteNames = null protocols = [TLSv1.2]  wantClientAuth = false  needClientAuth = true  authenticationOptional = false  maximumSessionCacheSize = -1  sessionTimeout = -1 wrap = false
+2023-06-01 16:34:49,831 TRACE [org.wildfly.security] (MSC service thread 1-6) Provider SunJSSE version 11 was added for algorithm TLS
+2023-06-01 16:34:49,831 TRACE [org.wildfly.security] (MSC service thread 1-6) Provider SunJSSE version 11 was added for algorithm TLSV1
+2023-06-01 16:34:49,831 TRACE [org.wildfly.security] (MSC service thread 1-6) Provider SunJSSE version 11 was added for algorithm DTLSV1.2
+2023-06-01 16:34:49,831 TRACE [org.wildfly.security] (MSC service thread 1-6) Provider SunJSSE version 11 was added for algorithm DTLSV1.0
+2023-06-01 16:34:49,831 TRACE [org.wildfly.security] (MSC service thread 1-6) Provider SunJSSE version 11 was added for algorithm DEFAULT
+2023-06-01 16:34:49,832 TRACE [org.wildfly.security] (MSC service thread 1-6) Provider SunJSSE version 11 was added for algorithm TLSV1.1
+2023-06-01 16:34:49,832 TRACE [org.wildfly.security] (MSC service thread 1-6) Provider SunJSSE version 11 was added for algorithm TLSV1.3
+2023-06-01 16:34:49,832 TRACE [org.wildfly.security] (MSC service thread 1-6) Provider SunJSSE version 11 was added for algorithm TLSV1.2
+2023-06-01 16:34:49,832 TRACE [org.wildfly.security] (MSC service thread 1-6) Provider SunJSSE version 11 was added for algorithm DTLS
+2023-06-01 16:34:49,832 TRACE [org.wildfly.security] (MSC service thread 1-6) Provider WildFlyElytronClientDefaultSSLContextProvider version 1.0 was added for algorithm DEFAULT
+2023-06-01 16:34:49,832 TRACE [org.wildfly.security] (MSC service thread 1-6) Provider openssl version 1.0 was added for algorithm TLSV1
+2023-06-01 16:34:49,832 TRACE [org.wildfly.security] (MSC service thread 1-6) Provider openssl version 1.0 was added for algorithm TLSV1.1
+2023-06-01 16:34:49,832 TRACE [org.wildfly.security] (MSC service thread 1-6) Provider openssl version 1.0 was added for algorithm OPENSSL.TLSV1.1
+2023-06-01 16:34:49,832 TRACE [org.wildfly.security] (MSC service thread 1-6) Provider openssl version 1.0 was added for algorithm OPENSSL.TLSV1.2
+2023-06-01 16:34:49,832 TRACE [org.wildfly.security] (MSC service thread 1-6) Provider openssl version 1.0 was added for algorithm OPENSSL.TLSV1.3
+2023-06-01 16:34:49,832 TRACE [org.wildfly.security] (MSC service thread 1-6) Provider openssl version 1.0 was added for algorithm TLS
+2023-06-01 16:34:49,832 TRACE [org.wildfly.security] (MSC service thread 1-6) Provider openssl version 1.0 was added for algorithm OPENSSL.TLS
+2023-06-01 16:34:49,832 TRACE [org.wildfly.security] (MSC service thread 1-6) Provider openssl version 1.0 was added for algorithm TLSV1.3
+2023-06-01 16:34:49,833 TRACE [org.wildfly.security] (MSC service thread 1-6) Provider openssl version 1.0 was added for algorithm OPENSSL.TLSV1
+2023-06-01 16:34:49,833 TRACE [org.wildfly.security] (MSC service thread 1-6) Provider openssl version 1.0 was added for algorithm TLSV1.2
+2023-06-01 16:34:49,833 TRACE [org.wildfly.security] (MSC service thread 1-6) Supported protocols are: [TLSV1.2]
+2023-06-01 16:34:49,833 TRACE [org.wildfly.security] (MSC service thread 1-6) Attempting to get an SSLContext instance using protocol TLSV1.2 and provider SunJSSE version 11
+2023-06-01 16:34:49,833 TRACE [org.wildfly.security.tls] (MSC service thread 1-6) SSLContext initialization:
+    securityDomain = null
+    canAuthPeers = false
+    cipherSuiteSelector = add not (encryption is one of (NULL)), then remove fully any of (authentication is one of (NULL), encryption is one of (NULL), export cipher suite is true, openssl security level is one of (LOW), protocol is one of (SSLv2))
+    protocolSelector = add protocols (TLSv1_2)
+    x509TrustManager = org.wildfly.extension.elytron.SSLDefinitions$DelegatingTrustManager@6271f3c5
+    x509KeyManager = org.wildfly.extension.elytron.SSLDefinitions$DelegatingKeyManager@441ff7c
+    providerSupplier = org.wildfly.security.provider.util.ProviderUtil$$Lambda$693/0x00000008407ac840@15fe4b7e
+    clientMode = false
+    authenticationOptional = false
+    sessionCacheSize = -1
+    sessionTimeout = -1
+    wantClientAuth = false
+    needClientAuth = true
+    useCipherSuitesOrder = false
+    wrap = false
+
+2023-06-01 16:34:49,857 TRACE [org.wildfly.extension.elytron] (MSC service thread 1-5) stopping:  keyStore = org.wildfly.security.keystore.AtomicLoadKeyStore@5faa6ebb  unmodifiableKeyStore = org.wildfly.security.keystore.UnmodifiableKeyStore@2153c211  trackingKeyStore = org.wildfly.security.keystore.ModifyTrackingKeyStore@252bfeb9  pathResolver = org.wildfly.extension.elytron.FileAttributeDefinitions$PathResolver@10763e37
+2023-06-01 16:34:49,858 TRACE [org.wildfly.extension.elytron] (MSC service thread 1-5) stopping:  keyStore = org.wildfly.security.keystore.AtomicLoadKeyStore@3c216d48  unmodifiableKeyStore = org.wildfly.security.keystore.UnmodifiableKeyStore@34ccd1c9  trackingKeyStore = org.wildfly.security.keystore.ModifyTrackingKeyStore@307213c1  pathResolver = org.wildfly.extension.elytron.FileAttributeDefinitions$PathResolver@4a56fd40
+2023-06-01 16:34:49,859 TRACE [org.wildfly.extension.elytron] (MSC service thread 1-1) stopping:  keyStore = org.wildfly.security.keystore.AtomicLoadKeyStore@35533721  unmodifiableKeyStore = org.wildfly.security.keystore.UnmodifiableKeyStore@11408927  trackingKeyStore = org.wildfly.security.keystore.ModifyTrackingKeyStore@13697f52  pathResolver = org.wildfly.extension.elytron.FileAttributeDefinitions$PathResolver@2a2f6fe8
+2023-06-01 16:34:49,914 TRACE [org.wildfly.security] (Controller Boot Thread) Building security domain with defaultRealmName Empty.
+2023-06-01 16:34:49,914 TRACE [org.wildfly.security] (Controller Boot Thread) Role mapping: principal [anonymous] -> decoded roles [] -> domain decoded roles [] -> realm mapped roles [] -> domain mapped roles []
+2023-06-01 16:34:49,942 INFO  [org.wildfly.extension.elytron.oidc._private] (ServerService Thread Pool -- 53) WFLYOIDC0001: Activating WildFly Elytron OIDC Subsystem
+2023-06-01 16:34:49,960 TRACE [org.wildfly.extension.elytron] (MSC service thread 1-6) Loaded providers [WildFlyElytronDigestProvider version 1.0, WildFlyElytronHttpBasicProvider version 1.0, WildFlyElytronHttpBearerProvider version 1.0, WildFlyElytronHttpClientCertProvider version 1.0, WildFlyElytronHttpDigestProvider version 1.0, WildFlyElytronHttpFormProvider version 1.0, WildFlyElytronHttpSpnegoProvider version 1.0, WildFlyElytron version 1.0, WildFlyElytronClientDefaultSSLContextProvider version 1.0, WildFlyElytronKeyProvider version 1.0, WildFlyElytronPasswordProvider version 1.0, WildFlyElytronCredentialStoreProvider version 1.0, WildFlyElytronDigestProvider version 1.0, WildFlyElytronHttpBasicProvider version 1.0, WildFlyElytronHttpBearerProvider version 1.0, WildFlyElytronHttpClientCertProvider version 1.0, WildFlyElytronHttpDigestProvider version 1.0, WildFlyElytronHttpExternalProvider version 1.0, WildFlyElytronHttpFormProvider version 1.0, WildFlyElytronHttpSpnegoProvider version 1.0, WildFlyElytronKeyStoreProvider version 1.0, WildFlyElytronSaslAnonymousProvider version 1.0, WildFlyElytronSaslDigestProvider version 1.0, WildFlyElytronSaslEntityProvider version 1.0, WildFlyElytronSaslExternalProvider version 1.0, WildFlyElytronSaslGs2Provider version 1.0, WildFlyElytronSaslGssapiProvider version 1.0, WildFlyElytronSaslLocalUserProvider version 1.0, WildFlyElytronSaslOAuth2Provider version 1.0, WildFlyElytronSaslOTPProvider version 1.0, WildFlyElytronSaslPlainProvider version 1.0, WildFlyElytronSaslScramProvider version 1.0]
+2023-06-01 16:34:49,962 TRACE [org.wildfly.extension.elytron] (MSC service thread 1-1) Loaded providers [openssl version 1.0]
+2023-06-01 16:34:49,965 TRACE [org.wildfly.security.tls] (MSC service thread 1-3) AtomicLoadKeyStore creating:  type = JKS,  provider =  SUN version 11
+2023-06-01 16:34:49,966 TRACE [org.wildfly.security] (MSC service thread 1-1) Building security domain with defaultRealmName ApplicationRealm.
+2023-06-01 16:34:49,966 TRACE [org.wildfly.security] (MSC service thread 1-1) The following additional realms were added: [ApplicationRealm, local].
+2023-06-01 16:34:49,966 TRACE [org.wildfly.security] (MSC service thread 1-1) Role mapping: principal [anonymous] -> decoded roles [] -> domain decoded roles [] -> realm mapped roles [] -> domain mapped roles []
+2023-06-01 16:34:49,966 TRACE [org.wildfly.security] (MSC service thread 1-1) Building security domain with defaultRealmName ManagementRealm.
+2023-06-01 16:34:49,966 TRACE [org.wildfly.security] (MSC service thread 1-1) The following additional realms were added: [ManagementRealm, local].
+2023-06-01 16:34:49,966 TRACE [org.wildfly.security] (MSC service thread 1-1) Role mapping: principal [anonymous] -> decoded roles [] -> domain decoded roles [] -> realm mapped roles [] -> domain mapped roles []
+2023-06-01 16:34:49,965 TRACE [org.wildfly.extension.elytron] (MSC service thread 1-3) starting:  type = JKS  provider = null  path = server.keystore  resolvedPath = /home/carodrig/wildfly/dist/target/wildfly-29.0.0.Alpha1-SNAPSHOT/standalone/configuration/server.keystore  password = true  aliasFilter = null
+2023-06-01 16:34:49,965 TRACE [org.wildfly.security.tls] (MSC service thread 1-6) AtomicLoadKeyStore creating:  type = JKS,  provider =  SUN version 11
+2023-06-01 16:34:49,966 TRACE [org.wildfly.security.tls] (MSC service thread 1-4) AtomicLoadKeyStore creating:  type = JKS,  provider =  SUN version 11
+2023-06-01 16:34:49,966 TRACE [org.wildfly.security.tls] (MSC service thread 1-3) AtomicLoadKeyStore loading:  stream = java.io.FileInputStream@6e63d268,  password = true
+2023-06-01 16:34:49,967 TRACE [org.wildfly.extension.elytron] (MSC service thread 1-6) starting:  type = JKS  provider = null  path = server.truststore  resolvedPath = /home/carodrig/wildfly/dist/target/wildfly-29.0.0.Alpha1-SNAPSHOT/standalone/configuration/server.truststore  password = true  aliasFilter = null
+2023-06-01 16:34:49,967 TRACE [org.wildfly.extension.elytron] (MSC service thread 1-4) starting:  type = JKS  provider = null  path = application.keystore  resolvedPath = /home/carodrig/wildfly/dist/target/wildfly-29.0.0.Alpha1-SNAPSHOT/standalone/configuration/application.keystore  password = true  aliasFilter = null
+2023-06-01 16:34:49,967 TRACE [org.wildfly.security.tls] (MSC service thread 1-6) AtomicLoadKeyStore loading:  stream = java.io.FileInputStream@398849f7,  password = true
+2023-06-01 16:34:49,967 TRACE [org.wildfly.security.tls] (MSC service thread 1-4) AtomicLoadKeyStore loading:  stream = java.io.FileInputStream@2a7604fa,  password = true
+2023-06-01 16:34:49,967 TRACE [org.wildfly.extension.elytron] (MSC service thread 1-3) KeyManager supplying:  providers = null  provider = null  algorithm = SunX509  keyManagerFactory = javax.net.ssl.KeyManagerFactory@152f26ab  keyStoreName = server.keystore  aliasFilter = null  keyStore = org.wildfly.security.keystore.UnmodifiableKeyStore@1e65977  keyStoreSize = 1  password (of item) = true
+2023-06-01 16:34:49,967 TRACE [org.wildfly.extension.elytron] (MSC service thread 1-6) TrustManager supplying:  providers = null  provider = null  algorithm = PKIX  trustManagerFactory = javax.net.ssl.TrustManagerFactory@7b2571df  keyStoreName = serverTS  keyStore = org.wildfly.security.keystore.UnmodifiableKeyStore@180ab041  aliasFilter = null  keyStoreSize = 1
+2023-06-01 16:34:49,967 TRACE [org.wildfly.extension.elytron] (MSC service thread 1-4) KeyManager supplying:  providers = null  provider = null  algorithm = SunX509  keyManagerFactory = javax.net.ssl.KeyManagerFactory@9e9b395  keyStoreName = applicationKS  aliasFilter = null  keyStore = org.wildfly.security.keystore.UnmodifiableKeyStore@71205a65  keyStoreSize = 1  password (of item) = true
+2023-06-01 16:34:49,968 TRACE [org.wildfly.extension.elytron] (MSC service thread 1-6) ServerSSLContext supplying:  securityDomain = null  keyManager = org.wildfly.extension.elytron.SSLDefinitions$DelegatingKeyManager@26e24467  trustManager = org.wildfly.extension.elytron.SSLDefinitions$DelegatingTrustManager@5d5e76bd  providers = null  cipherSuiteFilter = DEFAULT  cipherSuiteNames = null protocols = [TLSv1.2]  wantClientAuth = false  needClientAuth = true  authenticationOptional = false  maximumSessionCacheSize = -1  sessionTimeout = -1 wrap = false
+2023-06-01 16:34:49,968 TRACE [org.wildfly.security] (MSC service thread 1-6) Provider SunJSSE version 11 was added for algorithm TLS
+2023-06-01 16:34:49,968 TRACE [org.wildfly.security] (MSC service thread 1-6) Provider SunJSSE version 11 was added for algorithm TLSV1
+2023-06-01 16:34:49,968 TRACE [org.wildfly.security] (MSC service thread 1-6) Provider SunJSSE version 11 was added for algorithm DTLSV1.2
+2023-06-01 16:34:49,968 TRACE [org.wildfly.security] (MSC service thread 1-6) Provider SunJSSE version 11 was added for algorithm DTLSV1.0
+2023-06-01 16:34:49,968 TRACE [org.wildfly.security] (MSC service thread 1-6) Provider SunJSSE version 11 was added for algorithm DEFAULT
+2023-06-01 16:34:49,968 TRACE [org.wildfly.extension.elytron] (MSC service thread 1-3) ServerSSLContext supplying:  securityDomain = null  keyManager = org.wildfly.extension.elytron.SSLDefinitions$DelegatingKeyManager@15eb738d  trustManager = null  providers = null  cipherSuiteFilter = DEFAULT  cipherSuiteNames = null protocols = []  wantClientAuth = false  needClientAuth = false  authenticationOptional = false  maximumSessionCacheSize = -1  sessionTimeout = -1 wrap = false
+2023-06-01 16:34:49,968 TRACE [org.wildfly.security] (MSC service thread 1-6) Provider SunJSSE version 11 was added for algorithm TLSV1.1
+2023-06-01 16:34:49,968 TRACE [org.wildfly.security] (MSC service thread 1-6) Provider SunJSSE version 11 was added for algorithm TLSV1.3
+2023-06-01 16:34:49,968 TRACE [org.wildfly.security] (MSC service thread 1-3) Provider SunJSSE version 11 was added for algorithm TLS
+2023-06-01 16:34:49,968 TRACE [org.wildfly.security] (MSC service thread 1-6) Provider SunJSSE version 11 was added for algorithm TLSV1.2
+2023-06-01 16:34:49,968 TRACE [org.wildfly.security] (MSC service thread 1-3) Provider SunJSSE version 11 was added for algorithm TLSV1
+2023-06-01 16:34:49,968 TRACE [org.wildfly.security] (MSC service thread 1-6) Provider SunJSSE version 11 was added for algorithm DTLS
+2023-06-01 16:34:49,968 TRACE [org.wildfly.security] (MSC service thread 1-3) Provider SunJSSE version 11 was added for algorithm DTLSV1.2
+2023-06-01 16:34:49,969 TRACE [org.wildfly.security] (MSC service thread 1-3) Provider SunJSSE version 11 was added for algorithm DTLSV1.0
+2023-06-01 16:34:49,969 TRACE [org.wildfly.security] (MSC service thread 1-6) Provider WildFlyElytronClientDefaultSSLContextProvider version 1.0 was added for algorithm DEFAULT
+2023-06-01 16:34:49,969 TRACE [org.wildfly.security] (MSC service thread 1-3) Provider SunJSSE version 11 was added for algorithm DEFAULT
+2023-06-01 16:34:49,969 TRACE [org.wildfly.security] (MSC service thread 1-3) Provider SunJSSE version 11 was added for algorithm TLSV1.1
+2023-06-01 16:34:49,969 TRACE [org.wildfly.security] (MSC service thread 1-3) Provider SunJSSE version 11 was added for algorithm TLSV1.3
+2023-06-01 16:34:49,969 TRACE [org.wildfly.security] (MSC service thread 1-3) Provider SunJSSE version 11 was added for algorithm TLSV1.2
+2023-06-01 16:34:49,969 TRACE [org.wildfly.security] (MSC service thread 1-3) Provider SunJSSE version 11 was added for algorithm DTLS
+2023-06-01 16:34:49,969 TRACE [org.wildfly.security] (MSC service thread 1-3) Provider WildFlyElytronClientDefaultSSLContextProvider version 1.0 was added for algorithm DEFAULT
+2023-06-01 16:34:49,970 TRACE [org.wildfly.security] (MSC service thread 1-6) Provider openssl version 1.0 was added for algorithm TLSV1
+2023-06-01 16:34:49,970 TRACE [org.wildfly.security] (MSC service thread 1-3) Provider openssl version 1.0 was added for algorithm TLSV1
+2023-06-01 16:34:49,970 TRACE [org.wildfly.security] (MSC service thread 1-6) Provider openssl version 1.0 was added for algorithm TLSV1.1
+2023-06-01 16:34:49,970 TRACE [org.wildfly.security] (MSC service thread 1-3) Provider openssl version 1.0 was added for algorithm TLSV1.1
+2023-06-01 16:34:49,970 TRACE [org.wildfly.security] (MSC service thread 1-6) Provider openssl version 1.0 was added for algorithm OPENSSL.TLSV1.1
+2023-06-01 16:34:49,970 TRACE [org.wildfly.security] (MSC service thread 1-3) Provider openssl version 1.0 was added for algorithm OPENSSL.TLSV1.1
+2023-06-01 16:34:49,970 TRACE [org.wildfly.security] (MSC service thread 1-6) Provider openssl version 1.0 was added for algorithm OPENSSL.TLSV1.2
+2023-06-01 16:34:49,970 TRACE [org.wildfly.security] (MSC service thread 1-3) Provider openssl version 1.0 was added for algorithm OPENSSL.TLSV1.2
+2023-06-01 16:34:49,970 TRACE [org.wildfly.security] (MSC service thread 1-6) Provider openssl version 1.0 was added for algorithm OPENSSL.TLSV1.3
+2023-06-01 16:34:49,970 TRACE [org.wildfly.security] (MSC service thread 1-3) Provider openssl version 1.0 was added for algorithm OPENSSL.TLSV1.3
+2023-06-01 16:34:49,970 TRACE [org.wildfly.security] (MSC service thread 1-6) Provider openssl version 1.0 was added for algorithm TLS
+2023-06-01 16:34:49,970 TRACE [org.wildfly.security] (MSC service thread 1-3) Provider openssl version 1.0 was added for algorithm TLS
+2023-06-01 16:34:49,970 TRACE [org.wildfly.security] (MSC service thread 1-6) Provider openssl version 1.0 was added for algorithm OPENSSL.TLS
+2023-06-01 16:34:49,970 TRACE [org.wildfly.security] (MSC service thread 1-3) Provider openssl version 1.0 was added for algorithm OPENSSL.TLS
+2023-06-01 16:34:49,970 TRACE [org.wildfly.security] (MSC service thread 1-6) Provider openssl version 1.0 was added for algorithm TLSV1.3
+2023-06-01 16:34:49,970 TRACE [org.wildfly.security] (MSC service thread 1-3) Provider openssl version 1.0 was added for algorithm TLSV1.3
+2023-06-01 16:34:49,970 TRACE [org.wildfly.security] (MSC service thread 1-6) Provider openssl version 1.0 was added for algorithm OPENSSL.TLSV1
+2023-06-01 16:34:49,970 TRACE [org.wildfly.security] (MSC service thread 1-3) Provider openssl version 1.0 was added for algorithm OPENSSL.TLSV1
+2023-06-01 16:34:49,970 TRACE [org.wildfly.security] (MSC service thread 1-3) Provider openssl version 1.0 was added for algorithm TLSV1.2
+2023-06-01 16:34:49,970 TRACE [org.wildfly.security] (MSC service thread 1-3) Supported protocols are: [TLSV1.3, TLSV1.2, TLSV1.1, TLSV1]
+2023-06-01 16:34:49,970 TRACE [org.wildfly.security] (MSC service thread 1-6) Provider openssl version 1.0 was added for algorithm TLSV1.2
+2023-06-01 16:34:49,970 TRACE [org.wildfly.security] (MSC service thread 1-3) Attempting to get an SSLContext instance using protocol TLSV1.3 and provider SunJSSE version 11
+2023-06-01 16:34:49,970 TRACE [org.wildfly.security] (MSC service thread 1-6) Supported protocols are: [TLSV1.2]
+2023-06-01 16:34:49,971 TRACE [org.wildfly.security] (MSC service thread 1-6) Attempting to get an SSLContext instance using protocol TLSV1.2 and provider SunJSSE version 11
+2023-06-01 16:34:49,971 TRACE [org.wildfly.security.tls] (MSC service thread 1-3) SSLContext initialization:
+    securityDomain = null
+    canAuthPeers = false
+    cipherSuiteSelector = add not (encryption is one of (NULL)), then remove fully any of (authentication is one of (NULL), encryption is one of (NULL), export cipher suite is true, openssl security level is one of (LOW), protocol is one of (SSLv2))
+    protocolSelector = add protocols (TLSv1, TLSv1_1, TLSv1_2, TLSv1_3)
+    x509TrustManager = sun.security.ssl.X509TrustManagerImpl@2b5a1034
+    x509KeyManager = org.wildfly.extension.elytron.SSLDefinitions$DelegatingKeyManager@15eb738d
+    providerSupplier = org.wildfly.security.provider.util.ProviderUtil$$Lambda$693/0x00000008407ac840@15fe4b7e
+    clientMode = false
+    authenticationOptional = false
+    sessionCacheSize = -1
+    sessionTimeout = -1
+    wantClientAuth = false
+    needClientAuth = false
+    useCipherSuitesOrder = true
+    wrap = false
+
+2023-06-01 16:34:49,971 TRACE [org.wildfly.security.tls] (MSC service thread 1-6) SSLContext initialization:
+    securityDomain = null
+    canAuthPeers = false
+    cipherSuiteSelector = add not (encryption is one of (NULL)), then remove fully any of (authentication is one of (NULL), encryption is one of (NULL), export cipher suite is true, openssl security level is one of (LOW), protocol is one of (SSLv2))
+    protocolSelector = add protocols (TLSv1_2)
+    x509TrustManager = org.wildfly.extension.elytron.SSLDefinitions$DelegatingTrustManager@5d5e76bd
+    x509KeyManager = org.wildfly.extension.elytron.SSLDefinitions$DelegatingKeyManager@26e24467
+    providerSupplier = org.wildfly.security.provider.util.ProviderUtil$$Lambda$693/0x00000008407ac840@15fe4b7e
+    clientMode = false
+    authenticationOptional = false
+    sessionCacheSize = -1
+    sessionTimeout = -1
+    wantClientAuth = false
+    needClientAuth = true
+    useCipherSuitesOrder = false
+    wrap = false
+
+2023-06-01 16:34:49,979 TRACE [org.wildfly.security] (management I/O-2) Handling SocketAddressCallback
+2023-06-01 16:34:49,979 TRACE [org.wildfly.security] (management I/O-2) Handling SocketAddressCallback
+2023-06-01 16:34:49,980 TRACE [org.wildfly.security] (management I/O-2) Handling MechanismInformationCallback type='SASL' name='JBOSS-LOCAL-USER' host-name='localhost' protocol='remote'
+2023-06-01 16:34:49,980 TRACE [org.wildfly.security] (management I/O-2) Handling MechanismInformationCallback type='SASL' name='JBOSS-LOCAL-USER' host-name='localhost' protocol='remote'
+2023-06-01 16:34:49,980 TRACE [org.wildfly.security] (management I/O-2) Creating SaslServer [org.wildfly.security.sasl.localuser.LocalUserServer@5e8519c6] for mechanism [JBOSS-LOCAL-USER] and protocol [remote]
+2023-06-01 16:34:49,980 TRACE [org.wildfly.security] (management I/O-2) Created SaslServer [org.wildfly.security.sasl.util.SecurityIdentitySaslServerFactory$1@30697f5b->org.wildfly.security.sasl.util.AuthenticationTimeoutSaslServerFactory$DelegatingTimeoutSaslServer@6f91a550->org.wildfly.security.sasl.util.AuthenticationCompleteCallbackSaslServerFactory$1@48979d74->org.wildfly.security.sasl.localuser.LocalUserServer@5e8519c6] for mechanism [JBOSS-LOCAL-USER]
+2023-06-01 16:34:49,982 TRACE [org.wildfly.security] (management task-1) Handling NameCallback: authenticationName = $local
+2023-06-01 16:34:49,983 TRACE [org.wildfly.security] (management task-1) Principal assigning: [$local], pre-realm rewritten: [$local], realm name: [local], post-realm rewritten: [$local], realm rewritten: [$local]
+2023-06-01 16:34:49,983 TRACE [org.wildfly.security] (management task-1) Role mapping: principal [$local] -> decoded roles [] -> domain decoded roles [] -> realm mapped roles [SuperUser] -> domain mapped roles [SuperUser]
+2023-06-01 16:34:49,983 TRACE [org.wildfly.security] (management task-1) Authorizing principal $local.
+2023-06-01 16:34:49,983 TRACE [org.wildfly.security] (management task-1) Authorizing against the following attributes: [] => []
+2023-06-01 16:34:49,983 TRACE [org.wildfly.security] (management task-1) Authorizing against the following runtime attributes: [Source-Address] => [127.0.0.1]
+2023-06-01 16:34:49,983 TRACE [org.wildfly.security] (management task-1) Permission mapping: identity [$local] with roles [SuperUser] implies ("org.wildfly.security.auth.permission.LoginPermission" "") = true
+2023-06-01 16:34:49,983 TRACE [org.wildfly.security] (management task-1) Authorization succeed
+2023-06-01 16:34:49,983 TRACE [org.wildfly.security] (management task-1) RunAs authorization succeed - the same identity
+2023-06-01 16:34:49,983 TRACE [org.wildfly.security] (management task-1) Handling AuthorizeCallback: authenticationID = $local  authorizationID = $local  authorized = true
+2023-06-01 16:34:49,983 TRACE [org.wildfly.security.sasl.local] (management task-1) SASL Negotiation Completed
+2023-06-01 16:34:49,984 TRACE [org.wildfly.security] (management task-1) Handling AuthenticationCompleteCallback: succeed
+2023-06-01 16:34:49,984 TRACE [org.wildfly.security] (management task-1) Handling SecurityIdentityCallback: identity = SecurityIdentity{principal=$local, securityDomain=org.wildfly.security.auth.server.SecurityDomain@25849d6a, authorizationIdentity=EMPTY, realmInfo=RealmInfo{name='local', securityRealm=org.wildfly.security.auth.realm.SimpleMapBackedSecurityRealm@21bb0d02}, creationTime=2023-06-01T20:34:49.983350Z}
+2023-06-01 16:34:50,073 TRACE [org.wildfly.security] (MSC service thread 1-2) Building security domain with defaultRealmName null.
+2023-06-01 16:34:50,073 TRACE [org.wildfly.security] (MSC service thread 1-2) Role mapping: principal [anonymous] -> decoded roles [] -> domain decoded roles [] -> realm mapped roles [] -> domain mapped roles []
+2023-06-01 16:34:50,118 TRACE [org.wildfly.extension.elytron] (MSC service thread 1-1) stopping:  keyStore = org.wildfly.security.keystore.AtomicLoadKeyStore@11486120  unmodifiableKeyStore = org.wildfly.security.keystore.UnmodifiableKeyStore@71205a65  trackingKeyStore = org.wildfly.security.keystore.ModifyTrackingKeyStore@6782ed91  pathResolver = org.wildfly.extension.elytron.FileAttributeDefinitions$PathResolver@b3b775
+2023-06-01 16:34:50,120 TRACE [org.wildfly.extension.elytron] (MSC service thread 1-8) stopping:  keyStore = org.wildfly.security.keystore.AtomicLoadKeyStore@b452faf  unmodifiableKeyStore = org.wildfly.security.keystore.UnmodifiableKeyStore@180ab041  trackingKeyStore = org.wildfly.security.keystore.ModifyTrackingKeyStore@3a3e7569  pathResolver = org.wildfly.extension.elytron.FileAttributeDefinitions$PathResolver@1ee43299
+2023-06-01 16:34:50,120 TRACE [org.wildfly.extension.elytron] (MSC service thread 1-7) stopping:  keyStore = org.wildfly.security.keystore.AtomicLoadKeyStore@48e9abfc  unmodifiableKeyStore = org.wildfly.security.keystore.UnmodifiableKeyStore@1e65977  trackingKeyStore = org.wildfly.security.keystore.ModifyTrackingKeyStore@659c471c  pathResolver = org.wildfly.extension.elytron.FileAttributeDefinitions$PathResolver@1d86a4d4
+2023-06-01 16:34:50,172 TRACE [org.wildfly.security] (Controller Boot Thread) Building security domain with defaultRealmName Empty.
+2023-06-01 16:34:50,173 TRACE [org.wildfly.security] (Controller Boot Thread) Role mapping: principal [anonymous] -> decoded roles [] -> domain decoded roles [] -> realm mapped roles [] -> domain mapped roles []
+2023-06-01 16:34:50,194 INFO  [org.wildfly.extension.elytron.oidc._private] (ServerService Thread Pool -- 53) WFLYOIDC0001: Activating WildFly Elytron OIDC Subsystem
+2023-06-01 16:34:50,215 TRACE [org.wildfly.extension.elytron] (MSC service thread 1-4) Loaded providers [WildFlyElytronDigestProvider version 1.0, WildFlyElytronHttpBasicProvider version 1.0, WildFlyElytronHttpBearerProvider version 1.0, WildFlyElytronHttpClientCertProvider version 1.0, WildFlyElytronHttpDigestProvider version 1.0, WildFlyElytronHttpFormProvider version 1.0, WildFlyElytronHttpSpnegoProvider version 1.0, WildFlyElytron version 1.0, WildFlyElytronClientDefaultSSLContextProvider version 1.0, WildFlyElytronKeyProvider version 1.0, WildFlyElytronPasswordProvider version 1.0, WildFlyElytronCredentialStoreProvider version 1.0, WildFlyElytronDigestProvider version 1.0, WildFlyElytronHttpBasicProvider version 1.0, WildFlyElytronHttpBearerProvider version 1.0, WildFlyElytronHttpClientCertProvider version 1.0, WildFlyElytronHttpDigestProvider version 1.0, WildFlyElytronHttpExternalProvider version 1.0, WildFlyElytronHttpFormProvider version 1.0, WildFlyElytronHttpSpnegoProvider version 1.0, WildFlyElytronKeyStoreProvider version 1.0, WildFlyElytronSaslAnonymousProvider version 1.0, WildFlyElytronSaslDigestProvider version 1.0, WildFlyElytronSaslEntityProvider version 1.0, WildFlyElytronSaslExternalProvider version 1.0, WildFlyElytronSaslGs2Provider version 1.0, WildFlyElytronSaslGssapiProvider version 1.0, WildFlyElytronSaslLocalUserProvider version 1.0, WildFlyElytronSaslOAuth2Provider version 1.0, WildFlyElytronSaslOTPProvider version 1.0, WildFlyElytronSaslPlainProvider version 1.0, WildFlyElytronSaslScramProvider version 1.0]
+2023-06-01 16:34:50,216 TRACE [org.wildfly.extension.elytron] (MSC service thread 1-8) Loaded providers [openssl version 1.0]
+2023-06-01 16:34:50,217 TRACE [org.wildfly.security] (MSC service thread 1-8) Building security domain with defaultRealmName ApplicationRealm.
+2023-06-01 16:34:50,218 TRACE [org.wildfly.security.tls] (MSC service thread 1-4) AtomicLoadKeyStore creating:  type = JKS,  provider =  SUN version 11
+2023-06-01 16:34:50,218 TRACE [org.wildfly.security] (MSC service thread 1-8) The following additional realms were added: [ApplicationRealm, local].
+2023-06-01 16:34:50,218 TRACE [org.wildfly.security] (MSC service thread 1-8) Role mapping: principal [anonymous] -> decoded roles [] -> domain decoded roles [] -> realm mapped roles [] -> domain mapped roles []
+2023-06-01 16:34:50,218 TRACE [org.wildfly.extension.elytron] (MSC service thread 1-4) starting:  type = JKS  provider = null  path = server.truststore  resolvedPath = /home/carodrig/wildfly/dist/target/wildfly-29.0.0.Alpha1-SNAPSHOT/standalone/configuration/server.truststore  password = true  aliasFilter = null
+2023-06-01 16:34:50,218 TRACE [org.wildfly.security.tls] (MSC service thread 1-4) AtomicLoadKeyStore loading:  stream = java.io.FileInputStream@7fa6f936,  password = true
+2023-06-01 16:34:50,218 TRACE [org.wildfly.security] (MSC service thread 1-2) Building security domain with defaultRealmName null.
+2023-06-01 16:34:50,218 TRACE [org.wildfly.security.tls] (MSC service thread 1-5) AtomicLoadKeyStore creating:  type = JKS,  provider =  SUN version 11
+2023-06-01 16:34:50,218 TRACE [org.wildfly.security] (MSC service thread 1-2) Role mapping: principal [anonymous] -> decoded roles [] -> domain decoded roles [] -> realm mapped roles [] -> domain mapped roles []
+2023-06-01 16:34:50,218 TRACE [org.wildfly.extension.elytron] (MSC service thread 1-5) starting:  type = JKS  provider = null  path = server.keystore  resolvedPath = /home/carodrig/wildfly/dist/target/wildfly-29.0.0.Alpha1-SNAPSHOT/standalone/configuration/server.keystore  password = true  aliasFilter = null
+2023-06-01 16:34:50,218 TRACE [org.wildfly.security.tls] (MSC service thread 1-5) AtomicLoadKeyStore loading:  stream = java.io.FileInputStream@66ee58c1,  password = true
+2023-06-01 16:34:50,218 TRACE [org.wildfly.extension.elytron] (MSC service thread 1-4) TrustManager supplying:  providers = null  provider = null  algorithm = PKIX  trustManagerFactory = javax.net.ssl.TrustManagerFactory@60ccffbd  keyStoreName = serverTS  keyStore = org.wildfly.security.keystore.UnmodifiableKeyStore@4bc64038  aliasFilter = null  keyStoreSize = 1
+2023-06-01 16:34:50,219 TRACE [org.wildfly.security.tls] (MSC service thread 1-3) AtomicLoadKeyStore creating:  type = JKS,  provider =  SUN version 11
+2023-06-01 16:34:50,219 TRACE [org.wildfly.extension.elytron] (MSC service thread 1-4) KeyManager supplying:  providers = null  provider = null  algorithm = SunX509  keyManagerFactory = javax.net.ssl.KeyManagerFactory@5fbbb6ff  keyStoreName = server.keystore  aliasFilter = null  keyStore = org.wildfly.security.keystore.UnmodifiableKeyStore@179c8b77  keyStoreSize = 1  password (of item) = true
+2023-06-01 16:34:50,219 TRACE [org.wildfly.extension.elytron] (MSC service thread 1-3) starting:  type = JKS  provider = null  path = application.keystore  resolvedPath = /home/carodrig/wildfly/dist/target/wildfly-29.0.0.Alpha1-SNAPSHOT/standalone/configuration/application.keystore  password = true  aliasFilter = null
+2023-06-01 16:34:50,219 TRACE [org.wildfly.security.tls] (MSC service thread 1-3) AtomicLoadKeyStore loading:  stream = java.io.FileInputStream@7265d938,  password = true
+2023-06-01 16:34:50,219 TRACE [org.wildfly.security] (MSC service thread 1-3) Building security domain with defaultRealmName ManagementRealm.
+2023-06-01 16:34:50,219 TRACE [org.wildfly.extension.elytron] (MSC service thread 1-2) KeyManager supplying:  providers = null  provider = null  algorithm = SunX509  keyManagerFactory = javax.net.ssl.KeyManagerFactory@745c2371  keyStoreName = applicationKS  aliasFilter = null  keyStore = org.wildfly.security.keystore.UnmodifiableKeyStore@3acc87bd  keyStoreSize = 1  password (of item) = true
+2023-06-01 16:34:50,219 TRACE [org.wildfly.security] (MSC service thread 1-3) The following additional realms were added: [ManagementRealm, local].
+2023-06-01 16:34:50,219 TRACE [org.wildfly.extension.elytron] (MSC service thread 1-4) ServerSSLContext supplying:  securityDomain = null  keyManager = org.wildfly.extension.elytron.SSLDefinitions$DelegatingKeyManager@102abf2e  trustManager = org.wildfly.extension.elytron.SSLDefinitions$DelegatingTrustManager@6994fa93  providers = null  cipherSuiteFilter = DEFAULT  cipherSuiteNames = null protocols = [TLSv1.2]  wantClientAuth = false  needClientAuth = true  authenticationOptional = false  maximumSessionCacheSize = -1  sessionTimeout = -1 wrap = false
+2023-06-01 16:34:50,220 TRACE [org.wildfly.security] (MSC service thread 1-3) Role mapping: principal [anonymous] -> decoded roles [] -> domain decoded roles [] -> realm mapped roles [] -> domain mapped roles []
+2023-06-01 16:34:50,220 TRACE [org.wildfly.security] (MSC service thread 1-4) Provider SunJSSE version 11 was added for algorithm TLS
+2023-06-01 16:34:50,220 TRACE [org.wildfly.security] (MSC service thread 1-4) Provider SunJSSE version 11 was added for algorithm TLSV1
+2023-06-01 16:34:50,220 TRACE [org.wildfly.security] (MSC service thread 1-4) Provider SunJSSE version 11 was added for algorithm DTLSV1.2
+2023-06-01 16:34:50,220 TRACE [org.wildfly.security] (MSC service thread 1-4) Provider SunJSSE version 11 was added for algorithm DTLSV1.0
+2023-06-01 16:34:50,220 TRACE [org.wildfly.security] (MSC service thread 1-4) Provider SunJSSE version 11 was added for algorithm DEFAULT
+2023-06-01 16:34:50,220 TRACE [org.wildfly.security] (MSC service thread 1-4) Provider SunJSSE version 11 was added for algorithm TLSV1.1
+2023-06-01 16:34:50,220 TRACE [org.wildfly.security] (MSC service thread 1-4) Provider SunJSSE version 11 was added for algorithm TLSV1.3
+2023-06-01 16:34:50,220 TRACE [org.wildfly.security] (MSC service thread 1-4) Provider SunJSSE version 11 was added for algorithm TLSV1.2
+2023-06-01 16:34:50,220 TRACE [org.wildfly.extension.elytron] (MSC service thread 1-5) ServerSSLContext supplying:  securityDomain = null  keyManager = org.wildfly.extension.elytron.SSLDefinitions$DelegatingKeyManager@5ccb4931  trustManager = null  providers = null  cipherSuiteFilter = DEFAULT  cipherSuiteNames = null protocols = []  wantClientAuth = false  needClientAuth = false  authenticationOptional = false  maximumSessionCacheSize = -1  sessionTimeout = -1 wrap = false
+2023-06-01 16:34:50,220 TRACE [org.wildfly.security] (MSC service thread 1-4) Provider SunJSSE version 11 was added for algorithm DTLS
+2023-06-01 16:34:50,220 TRACE [org.wildfly.security] (MSC service thread 1-5) Provider SunJSSE version 11 was added for algorithm TLS
+2023-06-01 16:34:50,220 TRACE [org.wildfly.security] (MSC service thread 1-4) Provider WildFlyElytronClientDefaultSSLContextProvider version 1.0 was added for algorithm DEFAULT
+2023-06-01 16:34:50,220 TRACE [org.wildfly.security] (MSC service thread 1-5) Provider SunJSSE version 11 was added for algorithm TLSV1
+2023-06-01 16:34:50,220 TRACE [org.wildfly.security] (MSC service thread 1-5) Provider SunJSSE version 11 was added for algorithm DTLSV1.2
+2023-06-01 16:34:50,220 TRACE [org.wildfly.security] (MSC service thread 1-4) Provider openssl version 1.0 was added for algorithm TLSV1
+2023-06-01 16:34:50,220 TRACE [org.wildfly.security] (MSC service thread 1-5) Provider SunJSSE version 11 was added for algorithm DTLSV1.0
+2023-06-01 16:34:50,221 TRACE [org.wildfly.security] (MSC service thread 1-4) Provider openssl version 1.0 was added for algorithm TLSV1.1
+2023-06-01 16:34:50,221 TRACE [org.wildfly.security] (MSC service thread 1-5) Provider SunJSSE version 11 was added for algorithm DEFAULT
+2023-06-01 16:34:50,221 TRACE [org.wildfly.security] (MSC service thread 1-4) Provider openssl version 1.0 was added for algorithm OPENSSL.TLSV1.1
+2023-06-01 16:34:50,221 TRACE [org.wildfly.security] (MSC service thread 1-5) Provider SunJSSE version 11 was added for algorithm TLSV1.1
+2023-06-01 16:34:50,221 TRACE [org.wildfly.security] (MSC service thread 1-4) Provider openssl version 1.0 was added for algorithm OPENSSL.TLSV1.2
+2023-06-01 16:34:50,221 TRACE [org.wildfly.security] (MSC service thread 1-5) Provider SunJSSE version 11 was added for algorithm TLSV1.3
+2023-06-01 16:34:50,221 TRACE [org.wildfly.security] (MSC service thread 1-4) Provider openssl version 1.0 was added for algorithm OPENSSL.TLSV1.3
+2023-06-01 16:34:50,221 TRACE [org.wildfly.security] (MSC service thread 1-5) Provider SunJSSE version 11 was added for algorithm TLSV1.2
+2023-06-01 16:34:50,221 TRACE [org.wildfly.security] (MSC service thread 1-4) Provider openssl version 1.0 was added for algorithm TLS
+2023-06-01 16:34:50,221 TRACE [org.wildfly.security] (MSC service thread 1-5) Provider SunJSSE version 11 was added for algorithm DTLS
+2023-06-01 16:34:50,221 TRACE [org.wildfly.security] (MSC service thread 1-4) Provider openssl version 1.0 was added for algorithm OPENSSL.TLS
+2023-06-01 16:34:50,221 TRACE [org.wildfly.security] (MSC service thread 1-4) Provider openssl version 1.0 was added for algorithm TLSV1.3
+2023-06-01 16:34:50,221 TRACE [org.wildfly.security] (MSC service thread 1-5) Provider WildFlyElytronClientDefaultSSLContextProvider version 1.0 was added for algorithm DEFAULT
+2023-06-01 16:34:50,221 TRACE [org.wildfly.security] (MSC service thread 1-4) Provider openssl version 1.0 was added for algorithm OPENSSL.TLSV1
+2023-06-01 16:34:50,221 TRACE [org.wildfly.security] (MSC service thread 1-4) Provider openssl version 1.0 was added for algorithm TLSV1.2
+2023-06-01 16:34:50,221 TRACE [org.wildfly.security] (MSC service thread 1-5) Provider openssl version 1.0 was added for algorithm TLSV1
+2023-06-01 16:34:50,221 TRACE [org.wildfly.security] (MSC service thread 1-4) Supported protocols are: [TLSV1.2]
+2023-06-01 16:34:50,221 TRACE [org.wildfly.security] (MSC service thread 1-5) Provider openssl version 1.0 was added for algorithm TLSV1.1
+2023-06-01 16:34:50,221 TRACE [org.wildfly.security] (MSC service thread 1-4) Attempting to get an SSLContext instance using protocol TLSV1.2 and provider SunJSSE version 11
+2023-06-01 16:34:50,221 TRACE [org.wildfly.security] (MSC service thread 1-5) Provider openssl version 1.0 was added for algorithm OPENSSL.TLSV1.1
+2023-06-01 16:34:50,222 TRACE [org.wildfly.security] (MSC service thread 1-5) Provider openssl version 1.0 was added for algorithm OPENSSL.TLSV1.2
+2023-06-01 16:34:50,222 TRACE [org.wildfly.security] (MSC service thread 1-5) Provider openssl version 1.0 was added for algorithm OPENSSL.TLSV1.3
+2023-06-01 16:34:50,222 TRACE [org.wildfly.security] (MSC service thread 1-5) Provider openssl version 1.0 was added for algorithm TLS
+2023-06-01 16:34:50,222 TRACE [org.wildfly.security.tls] (MSC service thread 1-4) SSLContext initialization:
+    securityDomain = null
+    canAuthPeers = false
+    cipherSuiteSelector = add not (encryption is one of (NULL)), then remove fully any of (authentication is one of (NULL), encryption is one of (NULL), export cipher suite is true, openssl security level is one of (LOW), protocol is one of (SSLv2))
+    protocolSelector = add protocols (TLSv1_2)
+    x509TrustManager = org.wildfly.extension.elytron.SSLDefinitions$DelegatingTrustManager@6994fa93
+    x509KeyManager = org.wildfly.extension.elytron.SSLDefinitions$DelegatingKeyManager@102abf2e
+    providerSupplier = org.wildfly.security.provider.util.ProviderUtil$$Lambda$693/0x00000008407ac840@15fe4b7e
+    clientMode = false
+    authenticationOptional = false
+    sessionCacheSize = -1
+    sessionTimeout = -1
+    wantClientAuth = false
+    needClientAuth = true
+    useCipherSuitesOrder = false
+    wrap = false
+
+2023-06-01 16:34:50,222 TRACE [org.wildfly.security] (MSC service thread 1-5) Provider openssl version 1.0 was added for algorithm OPENSSL.TLS
+2023-06-01 16:34:50,222 TRACE [org.wildfly.security] (MSC service thread 1-5) Provider openssl version 1.0 was added for algorithm TLSV1.3
+2023-06-01 16:34:50,222 TRACE [org.wildfly.security] (MSC service thread 1-5) Provider openssl version 1.0 was added for algorithm OPENSSL.TLSV1
+2023-06-01 16:34:50,222 TRACE [org.wildfly.security] (MSC service thread 1-5) Provider openssl version 1.0 was added for algorithm TLSV1.2
+2023-06-01 16:34:50,222 TRACE [org.wildfly.security] (MSC service thread 1-5) Supported protocols are: [TLSV1.3, TLSV1.2, TLSV1.1, TLSV1]
+2023-06-01 16:34:50,222 TRACE [org.wildfly.security] (MSC service thread 1-5) Attempting to get an SSLContext instance using protocol TLSV1.3 and provider SunJSSE version 11
+2023-06-01 16:34:50,222 TRACE [org.wildfly.security.tls] (MSC service thread 1-5) SSLContext initialization:
+    securityDomain = null
+    canAuthPeers = false
+    cipherSuiteSelector = add not (encryption is one of (NULL)), then remove fully any of (authentication is one of (NULL), encryption is one of (NULL), export cipher suite is true, openssl security level is one of (LOW), protocol is one of (SSLv2))
+    protocolSelector = add protocols (TLSv1, TLSv1_1, TLSv1_2, TLSv1_3)
+    x509TrustManager = sun.security.ssl.X509TrustManagerImpl@2b5a1034
+    x509KeyManager = org.wildfly.extension.elytron.SSLDefinitions$DelegatingKeyManager@5ccb4931
+    providerSupplier = org.wildfly.security.provider.util.ProviderUtil$$Lambda$693/0x00000008407ac840@15fe4b7e
+    clientMode = false
+    authenticationOptional = false
+    sessionCacheSize = -1
+    sessionTimeout = -1
+    wantClientAuth = false
+    needClientAuth = false
+    useCipherSuitesOrder = true
+    wrap = false
+
+2023-06-01 16:34:50,234 TRACE [org.wildfly.security] (management I/O-1) Handling SocketAddressCallback
+2023-06-01 16:34:50,235 TRACE [org.wildfly.security] (management I/O-1) Handling SocketAddressCallback
+2023-06-01 16:34:50,235 TRACE [org.wildfly.security] (management I/O-1) Handling MechanismInformationCallback type='SASL' name='JBOSS-LOCAL-USER' host-name='localhost' protocol='remote'
+2023-06-01 16:34:50,235 TRACE [org.wildfly.security] (management I/O-1) Handling MechanismInformationCallback type='SASL' name='JBOSS-LOCAL-USER' host-name='localhost' protocol='remote'
+2023-06-01 16:34:50,235 TRACE [org.wildfly.security] (management I/O-1) Creating SaslServer [org.wildfly.security.sasl.localuser.LocalUserServer@890a3c] for mechanism [JBOSS-LOCAL-USER] and protocol [remote]
+2023-06-01 16:34:50,235 TRACE [org.wildfly.security] (management I/O-1) Created SaslServer [org.wildfly.security.sasl.util.SecurityIdentitySaslServerFactory$1@4b68ef5->org.wildfly.security.sasl.util.AuthenticationTimeoutSaslServerFactory$DelegatingTimeoutSaslServer@41b40007->org.wildfly.security.sasl.util.AuthenticationCompleteCallbackSaslServerFactory$1@382fa779->org.wildfly.security.sasl.localuser.LocalUserServer@890a3c] for mechanism [JBOSS-LOCAL-USER]
+2023-06-01 16:34:50,237 TRACE [org.wildfly.security] (management task-1) Handling NameCallback: authenticationName = $local
+2023-06-01 16:34:50,237 TRACE [org.wildfly.security] (management task-1) Principal assigning: [$local], pre-realm rewritten: [$local], realm name: [local], post-realm rewritten: [$local], realm rewritten: [$local]
+2023-06-01 16:34:50,237 TRACE [org.wildfly.security] (management task-1) Role mapping: principal [$local] -> decoded roles [] -> domain decoded roles [] -> realm mapped roles [SuperUser] -> domain mapped roles [SuperUser]
+2023-06-01 16:34:50,237 TRACE [org.wildfly.security] (management task-1) Authorizing principal $local.
+2023-06-01 16:34:50,237 TRACE [org.wildfly.security] (management task-1) Authorizing against the following attributes: [] => []
+2023-06-01 16:34:50,237 TRACE [org.wildfly.security] (management task-1) Authorizing against the following runtime attributes: [Source-Address] => [127.0.0.1]
+2023-06-01 16:34:50,237 TRACE [org.wildfly.security] (management task-1) Permission mapping: identity [$local] with roles [SuperUser] implies ("org.wildfly.security.auth.permission.LoginPermission" "") = true
+2023-06-01 16:34:50,237 TRACE [org.wildfly.security] (management task-1) Authorization succeed
+2023-06-01 16:34:50,238 TRACE [org.wildfly.security] (management task-1) RunAs authorization succeed - the same identity
+2023-06-01 16:34:50,238 TRACE [org.wildfly.security] (management task-1) Handling AuthorizeCallback: authenticationID = $local  authorizationID = $local  authorized = true
+2023-06-01 16:34:50,238 TRACE [org.wildfly.security.sasl.local] (management task-1) SASL Negotiation Completed
+2023-06-01 16:34:50,238 TRACE [org.wildfly.security] (management task-1) Handling AuthenticationCompleteCallback: succeed
+2023-06-01 16:34:50,238 TRACE [org.wildfly.security] (management task-1) Handling SecurityIdentityCallback: identity = SecurityIdentity{principal=$local, securityDomain=org.wildfly.security.auth.server.SecurityDomain@1d0d48d0, authorizationIdentity=EMPTY, realmInfo=RealmInfo{name='local', securityRealm=org.wildfly.security.auth.realm.SimpleMapBackedSecurityRealm@1932dfa9}, creationTime=2023-06-01T20:34:50.237553Z}
+2023-06-01 16:34:53,618 TRACE [org.wildfly.extension.elytron] (MSC service thread 1-2) stopping:  keyStore = org.wildfly.security.keystore.AtomicLoadKeyStore@6048da42  unmodifiableKeyStore = org.wildfly.security.keystore.UnmodifiableKeyStore@3acc87bd  trackingKeyStore = org.wildfly.security.keystore.ModifyTrackingKeyStore@520ab82d  pathResolver = org.wildfly.extension.elytron.FileAttributeDefinitions$PathResolver@5ba13327
+2023-06-01 16:34:53,619 TRACE [org.wildfly.extension.elytron] (MSC service thread 1-7) stopping:  keyStore = org.wildfly.security.keystore.AtomicLoadKeyStore@3036983f  unmodifiableKeyStore = org.wildfly.security.keystore.UnmodifiableKeyStore@4bc64038  trackingKeyStore = org.wildfly.security.keystore.ModifyTrackingKeyStore@5a35bba1  pathResolver = org.wildfly.extension.elytron.FileAttributeDefinitions$PathResolver@255a3595
+2023-06-01 16:34:53,619 TRACE [org.wildfly.extension.elytron] (MSC service thread 1-8) stopping:  keyStore = org.wildfly.security.keystore.AtomicLoadKeyStore@613df3e0  unmodifiableKeyStore = org.wildfly.security.keystore.UnmodifiableKeyStore@179c8b77  trackingKeyStore = org.wildfly.security.keystore.ModifyTrackingKeyStore@2575c7df  pathResolver = org.wildfly.extension.elytron.FileAttributeDefinitions$PathResolver@4282d661
