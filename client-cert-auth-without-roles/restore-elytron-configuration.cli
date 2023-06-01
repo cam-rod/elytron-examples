@@ -1,0 +1,39 @@
+# Batch script to restore the configuration back to default 
+batch
+
+#Undo undertow subsystem configuration 
+/subsystem=undertow/application-security-domain=other:undefine-attribute(name=override-deployment-config)
+/subsystem=undertow/application-security-domain=other:undefine-attribute(name=http-authentication-factory)
+/subsystem=undertow/application-security-domain=other:write-attribute(name=security-domain, value=ApplicationDomain)
+
+# remove the security domain we created
+/subsystem=elytron/security-domain=clientCertDomain:remove()
+/subsystem=elytron/http-authentication-factory=clientCertAuth:remove()
+/subsystem=elytron/configurable-http-server-mechanism-factory=configuredCert:remove()
+/subsystem=elytron/security-domain=QuickstartDomain:remove()
+
+#remove the constant realm mapper
+/subsystem=elytron/constant-realm-mapper=ksRealm:remove()
+
+# restore the Server ssl context to default values
+/subsystem=elytron/server-ssl-context=applicationSSC:write-attribute(name=key-manager, value=applicationKM)
+/subsystem=elytron/server-ssl-context=applicationSSC:undefine-attribute(name=trust-manager)
+/subsystem=elytron/server-ssl-context=applicationSSC:undefine-attribute(name=need-client-auth)
+/subsystem=elytron/server-ssl-context=applicationSSC:undefine-attribute(name=want-client-auth)
+
+# restore the trust manager configuration
+/subsystem=elytron/trust-manager=twoWayTM:remove()
+
+# restore the key manager configuration
+/subsystem=elytron/key-manager=twoWayKM:remove()
+
+# restore the key store realm configurations
+/subsystem=elytron/key-store=twoWayKS:remove()
+/subsystem=elytron/key-store-realm=ksRealm:remove()
+/subsystem=elytron/key-store=twoWayTS:remove()
+
+# remove the CN decoder we used to decode the certificates
+/subsystem=elytron/x500-attribute-principal-decoder=cnDecoder:remove()
+
+run-batch
+reload
