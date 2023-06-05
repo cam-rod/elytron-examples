@@ -82,7 +82,7 @@
                 <formatter>
                     <named-formatter name="PATTERN"/>
                 </formatter>
-                <file path="/home/carodrig/elytron-examples/client-cert-auth-with-roles/current-logging.log"/>
+                <file path="/home/carodrig/elytron-examples/client-cert-auth-without-roles/current-logging.log"/>
                 <append value="true"/>
             </file-handler>
             <periodic-rotating-file-handler name="FILE" autoflush="true">
