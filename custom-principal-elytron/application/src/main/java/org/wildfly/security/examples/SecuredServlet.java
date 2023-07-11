@@ -21,10 +21,8 @@ import static java.time.temporal.ChronoUnit.DAYS;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Set;
 
 import jakarta.inject.Inject;
-import jakarta.security.enterprise.SecurityContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.HttpMethodConstraint;
 import jakarta.servlet.annotation.ServletSecurity;
@@ -33,6 +31,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
+import org.wildfly.security.auth.principal.NamePrincipal;
 import org.wildfly.security.auth.server.SecurityIdentity;
 
 /**
@@ -47,9 +46,8 @@ public class SecuredServlet extends HttpServlet {
 
     private static final long serialVersionUID = -7255453900077536656L;
     @Inject
-    SecurityContext securityContext;
-    @Inject
     SecurityIdentity securityIdentity;
+    // References to SecurityContext removed since it was added in JBEAP-24521
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -60,7 +58,6 @@ public class SecuredServlet extends HttpServlet {
 
     private String securedPage(HttpServletRequest req) {
         String newline = System.getProperty("line.separator");
-        CustomPrincipal customPrincipalFromType = retrieveCustomPrincipalByType();
 
         return String.join(newline,
                 "<!DOCTYPE html>",
@@ -71,42 +68,26 @@ public class SecuredServlet extends HttpServlet {
                 "        <p>For reference, transform sequence is quickstartUser -> <em>customQuickstartUserPre</em> -> customQuickstartUserPost.</p>",
                 "        <p>Injection check - these values should match:</p>",
                 "        <ul>",
-  String.format("            <li>Identity as available from Jakarta Security (<code>SecurityContext</code>): <strong>%s</strong></li>", securityContext.getCallerPrincipal().getName()),
   String.format("            <li>Identity as available from injection (<code>SecurityIdentity</code>): <strong>%s</strong></li>", securityIdentity.getPrincipal().getName()),
   String.format("            <li>Identity as provided in HTTPServletRequest: <strong>%s</strong>", req.getUserPrincipal()),
+  String.format("            <li>Is <code>HttpServletRequest.getUserPrincipal()</code> a <em>NamePrincipal</em>? <strong>%s</strong> Is it a <em>CustomPrincipal</em>? <strong>%s</strong>",
+                        req.getUserPrincipal() instanceof NamePrincipal ? "yes":"no",
+                        req.getUserPrincipal() instanceof CustomPrincipal ? "yes":"no"),
                 "        </ul>",
                 "        <p>Custom Principal check - these values should match:</p>",
                 "        <ul>",
-  String.format("            <li>Caller principal<code>(SecurityContext.getCallerPrincipal)</code>: Class -> <strong>%s</strong>, Name -> <strong>%s</strong></li>",
-                        securityContext.getCallerPrincipal().getClass().getCanonicalName(),
-                        securityContext.getCallerPrincipal().getName()),
-                customPrincipalFromType != null
-                        ? String.format("            <li>Custom principal<code>(SecurityContext.getPrincipalsByType)</code>: Class -> <strong>%s</strong>, Name -> <strong>%s</strong></li>",
-                                customPrincipalFromType.getClass().getCanonicalName(),
-                                customPrincipalFromType.getName())
-                        : String.format("            <li>Custom principal<code>(SecurityContext.getPrincipalsByType)</code>: Class -> <strong>%s</strong>, Name -> <strong>%s</strong></li>",
-                                "not found",
-                                "null"),
   String.format("            <li>Injection<code>(SecurityIdentity.getPrincipal)</code>: Class -> <strong>%s</strong>, Name -> <strong>%s</strong></li>",
                         securityIdentity.getPrincipal().getClass().getCanonicalName(),
                         securityIdentity.getPrincipal().getName()),
                 "        </ul>",
                 "        <p>Custom Principal usage - this check will return a result of <em>enabled</em> if the CustomPrincipal was injected properly:</p>",
                 "        <ul>",
-                customPrincipalFromType != null
-                        ? generateSecretsAccessString("SecurityContext", daysSinceLogin(customPrincipalFromType))
-                        : "        <li>The custom principal was not loaded from SecurityContext. Secrets access is <strong>disabled</strong>.</li>",
                 securityIdentity.getPrincipal().getClass() == CustomPrincipal.class
                         ? generateSecretsAccessString("SecurityIdentity", daysSinceLogin((CustomPrincipal) securityIdentity.getPrincipal()))
                         : "        <li>The custom principal was not loaded from SecurityIdentity. Secrets access is <strong>disabled</strong>.</li>",
                 "    </body>",
                 "</html>"
         );
-    }
-
-    private CustomPrincipal retrieveCustomPrincipalByType() {
-        Set<CustomPrincipal> customPrincipals = securityContext.getPrincipalsByType(CustomPrincipal.class);
-        return customPrincipals.size() == 1 ? customPrincipals.iterator().next() : null;
     }
 
     /** @param principalProvider Name of the class or provider that returned the custom principal. */

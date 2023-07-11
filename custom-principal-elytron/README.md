@@ -1,5 +1,7 @@
 # Using custom principals with Elytron
 
+**Testing note: I modified the instructions here. The only other thing is to run `mvn clean package` on the `custom-realm/` directory before these steps.**
+
 This example demonstrates how to use custom principals in Elytron. The
 examples [custom-principal-ee](../custom-principal-ee)
 and [custom-principal-ejb](../custom-principal-ejb) demonstrate standard use cases, where the
@@ -76,26 +78,26 @@ module, which contains our custom principal:
 
 1. The `custom-principal-elytron-components` archive is added as a module to the server. This allows
    the custom components to be used by the server.
-2. A default JACC (Jakarta Authorization) policy is created, allowing deployments to use
-   the `SecurityContext` interface from the Jakarta Security API.
-3. A filesystem realm is created, and an identity is created for the
-   user `customQuickstartUserPost`.
+2. ~~A default JACC (Jakarta Authorization) policy is created, allowing deployments to use
+   the `SecurityContext` interface from the Jakarta Security API.~~
+3. ~~A filesystem realm is created, and an identity is created for the
+   user `customQuickstartUserPost`.~~ **A custom realm is created, with username `myadmin` and password `mypassword`.**
 4. A custom pre-realm-principal-transformer (from the
    class [CustomPreRealmTransformer](./components/src/main/java/org/wildfly/security/examples/CustomPreRealmTransformer.java))
    is added. This transformer converts the internal NamePrincipal into our custom format, and is
-   required to use it.
-5. A custom post-realm transformer is added to rename the principal. Note that this classes
+   required to use it. **Edit: renames username `admin` to `myadmin`**
+5. ~~A custom post-realm transformer is added to rename the principal. Note that this classes
    wraps [CustomNameRewriter](./components/src/main/java/org/wildfly/security/examples/CustomNameRewriter.java);
    even though the functionality is the same as the `regex-principal-transformer`, the use of a
-   custom principal means a default transformer can't be used.
+   custom principal means a default transformer can't be used.~~
 6. A security domain is created, referencing the filesystem realm and the pre-realm and post-realm
    transformers.
 7. The `application-security-domain` mapping in the Undertow subsystem is updated to reference this
    security domain.
 
-In the `configure-elytron.cli` script, replace `/PATH/TO` with the parent directory of
+In the `configure-elytron.cli` script, replace `/PATH/TO` **(edit: both mentions)** with the parent directory of
 the `elytron-examples` repo. Then, open a new terminal, navigate to the root directory of this
-example andrun the following command, replacing `WILDFLY_HOME` with the path to your server.
+example and run the following command, replacing `WILDFLY_HOME` with the path to your server.
 
 ```shell
     $ WILDFLY_HOME/bin/jboss-cli.sh --connect --file=configure-elytron.cli
@@ -130,9 +132,9 @@ archive deployed successfully.
 
 You can go to `http://localhost:8080/custom-principal-elytron` to access the web application now.
 Selecting the `Access Secured Servlet` link will prompt you for a username and password to log in.
-If you correctly login with the credentials created in the setup (username: `quickstartUser`,
-password: `password123!`), you will be greeted by a page that shows you the principal you're logged
-in with, as well as how the principal was handled internally. The raw HTML is shown below:
+If you correctly login with the credentials created in the setup ~~(username: `quickstartUser`,
+password: `password123!`)~~ **(new username: `admin`, password: `mypassword`)**, you will be greeted by a page that shows you the principal you're logged
+in with, as well as how the principal was handled internally. ~~The raw HTML is shown below:~~ **(edit: doesn't apply here)**
 
 ```html
 <!DOCTYPE html>

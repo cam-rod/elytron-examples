@@ -30,7 +30,7 @@ public class CustomPreRealmTransformer implements PrincipalTransformer {
 
     private static final int LOGIN_DELTA_DAYS = 10;
     private static final PrincipalTransformer delegate = CustomNameRewriter.asPrincipalTransformer(
-            "quickstartUser", "customQuickstartUserPre", false);
+            "admin", "myadmin", false);
 
     @Override
     public Principal apply(Principal principal) {
